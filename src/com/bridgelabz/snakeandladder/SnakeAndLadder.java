@@ -23,17 +23,26 @@ public class SnakeAndLadder {
 
             switch (checkOption) {
                 case NO_PLAY:
-                    newPosition = 0;
+                    System.out.println("No Play");
                     break;
+
                 case LADDER:
                     newPosition = dice;
+                    position += newPosition;
+                    System.out.println("Ladder");
+                    if (position > WIN_POSITION) {
+                        position -= newPosition;
+                    }
                     break;
+
                 case SNAKE:
-                    newPosition = -dice;
-            }
-            position = position + newPosition;
-            if (position < 0) {
-                position = 0;
+                    newPosition = dice;
+                    position -= newPosition;
+                    System.out.println("Snake");
+                    if (position < START) {
+                        position = START;
+                    }
+                    break;
             }
             System.out.println("Position: " + position);
         }
