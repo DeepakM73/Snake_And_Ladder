@@ -6,6 +6,7 @@ public class SnakeAndLadder {
     public static final int LADDER = 1;
     public static final int SNAKE = 2;
     public static final int WIN_POSITION = 100;
+    public static int diceCount;
 
     public static void main(String[] args) {
         int start=0;
@@ -20,6 +21,7 @@ public class SnakeAndLadder {
             int dice = (int) (Math.random() * 6) + 1;
             System.out.println("Dice roll: " + dice);
             int checkOption = (int) (Math.random() * 3);
+            diceCount++;
 
             switch (checkOption) {
                 case NO_PLAY:
@@ -46,5 +48,6 @@ public class SnakeAndLadder {
             }
             System.out.println("Position: " + position);
         }
+        System.out.println("Total dice roll count: " + diceCount);
     }
 }
